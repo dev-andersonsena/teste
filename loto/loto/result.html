@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultado do Sorteio</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Adicione estilos para a tabela aqui */
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Resultado do Sorteio</h1>
+    <table class="number-table">
+      <thead>
+        <tr>
+          <th>Números Ímpares</th>
+          <th>Números Pares</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="oddNumbers"></td>
+          <td id="evenNumbers"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    const oddNumbers = JSON.parse(localStorage.getItem("oddNumbers"));
+    const evenNumbers = JSON.parse(localStorage.getItem("evenNumbers"));
+
+    const oddNumbersCell = document.getElementById("oddNumbers");
+    const evenNumbersCell = document.getElementById("evenNumbers");
+
+    oddNumbersCell.textContent = oddNumbers.join(", ");
+    evenNumbersCell.textContent = evenNumbers.join(", ");
+  </script>
+</body>
+</html>
